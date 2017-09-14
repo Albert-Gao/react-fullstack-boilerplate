@@ -16,8 +16,9 @@ module.exports = {
         './client/index.jsx',
     ],
     output: {
-        filename: 'static/js/[name].bundle.js',
-        sourceMapFilename: 'static/js/[name].bundle.map.js',
+        filename: 'static/js/bundle.js',
+        sourceMapFilename: 'static/js/bundle.map.js',
+        chunkFilename: 'static/js/[name].chunk.js',        
         pathinfo: true,
         path: paths.appBuild,
         publicPath: './',
@@ -58,27 +59,16 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                include: paths.appSrc,
+                //include: paths.appSrc,
                 use: [
-                    {
-                        loader: require.resolve('style-loader'),
-                        options: {
-                            sourceMap: true
-                        },
-                    },
+                    { loader: require.resolve('style-loader') },
                     {
                         loader: require.resolve('css-loader'),
-                        options: {
-                            sourceMap: true,
-                            localIdentName: '[path]_[name]_[local]-[hash:base64:5]',
-                            importLoaders: 2,
-                        },
+                        options: { importLoaders: 2 },
                     },
                     {
                         loader: require.resolve('postcss-loader'),
                         options: {
-                            sourceMap: true,
-                            ident: 'postcss',                                
                             plugins: () => [
                                 require('postcss-flexbugs-fixes'),
                                 autoPrefixer({
@@ -93,12 +83,7 @@ module.exports = {
                             ],
                         },
                     },
-                    {
-                        loader: require.resolve('sass-loader'),
-                        options: {
-                            sourceMap: true
-                        },
-                    }
+                    { loader: require.resolve('sass-loader') }
                 ],
                 
             },
