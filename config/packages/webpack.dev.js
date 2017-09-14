@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const paths = require('./paths');
+const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -15,11 +16,13 @@ module.exports = {
         './client/index.jsx',
     ],
     output: {
-        filename: '[name].bundle.js',
-        sourceMapFilename: '[name].bundle.map.js',
+        filename: 'static/js/[name].bundle.js',
+        sourceMapFilename: 'static/js/[name].bundle.map.js',
         pathinfo: true,
-        path: paths.appBuildAssetsScripts,
-        publicPath: '/',
+        path: paths.appBuild,
+        publicPath: './',
+        devtoolModuleFilenameTemplate: info =>
+            path.resolve(info.absoluteResourcePath).replace(/\\/g, '/'),
     },
     module: {
         rules: [
@@ -28,7 +31,7 @@ module.exports = {
                 loader: require.resolve('url-loader'),
                 options: {
                     limit: 10000,
-                    name: '../media/[name].[hash:8].[ext]',
+                    name: 'static/media/[name].[hash:8].[ext]',
                 },
             },
             {
@@ -56,7 +59,6 @@ module.exports = {
             {
                 test: /\.scss$/,
                 include: paths.appSrc,
-                use: ExtractTextPlugin.extract({})
                 use: [
                     {
                         loader: require.resolve('style-loader'),
@@ -64,7 +66,6 @@ module.exports = {
                             sourceMap: true
                         },
                     },
-                    { loader: "file-loader" },
                     {
                         loader: require.resolve('css-loader'),
                         options: {
@@ -77,6 +78,7 @@ module.exports = {
                         loader: require.resolve('postcss-loader'),
                         options: {
                             sourceMap: true,
+                            ident: 'postcss',                                
                             plugins: () => [
                                 require('postcss-flexbugs-fixes'),
                                 autoPrefixer({
@@ -98,6 +100,7 @@ module.exports = {
                         },
                     }
                 ],
+                
             },
         ],
     },
@@ -117,25 +120,18 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(
-            ['build'], {
+            ['build'], 
+            {
                 root: paths.appDirectory,
                 verbose: true
-            }),
+            }
+        ),
         new HtmlWebpackPlugin({
-            filename:'../../index.html'
+            template: paths.appHtml
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
         new WriteFilePlugin(),
-        new CopyWebpackPlugin([
-        // {
-        //     from: paths.appStaticPages,
-        //     to: paths.appBuild,
-        // },
-        // {
-        //     from: paths.appAssets,
-        //     to: paths.appBuildAssets,
-        // },
-        ]),
+        new CopyWebpackPlugin(),
     ],
 };
