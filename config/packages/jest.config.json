@@ -1,0 +1,11 @@
+{
+    "verbose": true,
+    "rootDir": "../../",
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": ["<rootDir>/node_modules/", "<rootDir>/tests/acceptance/", "<rootDir>/tests/coverageReport/", "<rootDir>/build/"],
+    "collectCoverage": false,
+    "coverageDirectory": "tests/coverageReport",
+    "collectCoverageFrom" : ["**/client/**"],
+    "coveragePathIgnorePatterns": ["<rootDir>/node_modules/", "<rootDir>/configs/", "<rootDir>/src/config/appconfig.json", "<rootDir>/build/"],
+    "coverageReporters": ["text", "text-summary"]
+}

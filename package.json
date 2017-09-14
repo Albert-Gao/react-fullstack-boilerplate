@@ -22,7 +22,7 @@
     "npm": ">= 3.0.0"
   },
   "scripts": {
-    "test": "NODE_ENV=test ./node_modules/.bin/jest --runInBand --config=configs/jest.config.json",
+    "test": "./node_modules/.bin/jest --config=config/packages/jest.config.json",
     "eslint": "eslint server/. test/. --config .eslintrc.json",
     "start": "node server/",
     "e2e": "./node_modules/.bin/nightwatch --config=configs/nightwatch.json",
