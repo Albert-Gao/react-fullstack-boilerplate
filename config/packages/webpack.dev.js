@@ -3,10 +3,9 @@ const paths = require('./paths');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const autoPrefixer = require('autoprefixer');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: [
@@ -18,12 +17,10 @@ module.exports = {
     output: {
         filename: 'static/js/bundle.js',
         sourceMapFilename: 'static/js/bundle.map.js',
-        chunkFilename: 'static/js/[name].chunk.js',        
+        chunkFilename: 'static/js/[name].chunk.js',
         pathinfo: true,
         path: paths.appBuild,
         publicPath: './',
-        devtoolModuleFilenameTemplate: info =>
-            path.resolve(info.absoluteResourcePath).replace(/\\/g, '/'),
     },
     module: {
         rules: [
@@ -41,27 +38,21 @@ module.exports = {
                 loader: 'babel-loader',
                 options: {
                     cacheDirectory: true,
-                    presets: [
-                        ['env', {
-                            modules: false
-                        }], 'react'
-                    ],
+                    presets: [['env', { modules: false }], 'react'],
                     plugins: ['react-hot-loader/babel'],
                     ignore: [
                         'tests/',
-                        'dist/',
+                        'build/',
                         'node_modules/',
-                        'src/server/',
-                        'src/client/static',
+                        'server/',
                         'public',
                     ],
                 },
             },
             {
                 test: /\.scss$/,
-                //include: paths.appSrc,
                 use: [
-                    { loader: require.resolve('style-loader') },
+                    require.resolve('style-loader'),
                     {
                         loader: require.resolve('css-loader'),
                         options: { importLoaders: 2 },
@@ -69,6 +60,7 @@ module.exports = {
                     {
                         loader: require.resolve('postcss-loader'),
                         options: {
+                            ident: 'postcss',
                             plugins: () => [
                                 require('postcss-flexbugs-fixes'),
                                 autoPrefixer({
@@ -83,9 +75,8 @@ module.exports = {
                             ],
                         },
                     },
-                    { loader: require.resolve('sass-loader') }
+                    require.resolve('sass-loader'),
                 ],
-                
             },
         ],
     },
@@ -98,22 +89,18 @@ module.exports = {
             warnings: true,
             errors: true,
         },
-        proxy: {
-            '/': 'http://localhost:5678',
-        },
+        proxy: { '/': 'http://localhost:5678' },
         port: 9876,
     },
     plugins: [
         new CleanWebpackPlugin(
-            ['build'], 
+            ['build'],
             {
                 root: paths.appDirectory,
                 verbose: true
             }
         ),
-        new HtmlWebpackPlugin({
-            template: paths.appHtml
-        }),
+        new HtmlWebpackPlugin({ template: paths.appHtml }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
         new WriteFilePlugin(),

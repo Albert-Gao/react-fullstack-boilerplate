@@ -25,8 +25,7 @@ function ensureSlash(path, needsSlash) {
     }
 }
 
-const getPublicUrl = appPackageJson =>
-    envPublicUrl || require(appPackageJson).homepage;
+const getPublicUrl = appPackageJson => envPublicUrl || require(appPackageJson).homepage;
 
 // We use `PUBLIC_URL` environment variable or "homepage" field to infer
 // "public path" at which the app is served.
@@ -41,23 +40,16 @@ function getServedPath(appPackageJson) {
     return ensureSlash(servedUrl, true);
 }
 
-// config after eject: we're in ./config/
 module.exports = {
     appDirectory,
     dotenv: resolveApp('.env'),
     appBuild: resolveApp('build'),
-    appStaticPages: resolveApp('client/static/layouts'),
     appBuildHomepage: resolveApp('build/index.html'),
-    appBuildAssetsScripts: resolveApp('build/assets/scripts'),
-    appBuildAssets: resolveApp('build/assets'),
-    appAssets: resolveApp('client/static/assets'),
-    appPostCssConfig: resolveApp('configs/postcss.config.js'),
     appPublic: resolveApp('public'),
     appHtml: resolveApp('public/index.html'),
     appPackageJson: resolveApp('package.json'),
     appSrc: resolveApp('client'),
     yarnLockFile: resolveApp('yarn.lock'),
-    testsSetup: resolveApp('src/setupTests.js'),
     appNodeModules: resolveApp('node_modules'),
     publicUrl: getPublicUrl(resolveApp('package.json')),
     servedPath: getServedPath(resolveApp('package.json')),
