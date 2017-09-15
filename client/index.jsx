@@ -1,17 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Home from './components/Home/Home.jsx';
+import { render } from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import App from './components/App';
+import reducer from './reducers';
 
-const render = (Component) => {
-    ReactDOM.render(
-        <Component />,
-        document.getElementById('root'));
-};
+const store = createStore(reducer);
 
-render(Home);
+function renderWrapper(Component) {
+    render(
+        <Provider store={store}>
+            <Component />
+        </Provider>,
+        document.getElementById('root'),
+    );
+}
+
+renderWrapper(App);
 
 if (module.hot) {
-    module.hot.accept('./components/Home/Home.jsx', () => {
-        render(Home);
+    module.hot.accept('./components/App', () => {
+        renderWrapper(App);
     });
 }

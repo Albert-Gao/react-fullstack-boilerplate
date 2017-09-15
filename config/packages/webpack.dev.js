@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const paths = require('./paths');
-const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -22,6 +21,9 @@ module.exports = {
         path: paths.appBuild,
         publicPath: './',
     },
+    resolve: {
+        extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx'],
+    },
     module: {
         rules: [
             {
@@ -35,11 +37,12 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 include: paths.appSrc,
+                exclude: /(node_modules|bower_components)/,
                 loader: 'babel-loader',
                 options: {
                     cacheDirectory: true,
                     presets: [['env', { modules: false }], 'react'],
-                    plugins: ['react-hot-loader/babel'],
+                    plugins: ['react-hot-loader/babel', "transform-object-rest-spread"],
                     ignore: [
                         'tests/',
                         'build/',
@@ -91,6 +94,13 @@ module.exports = {
         },
         proxy: { '/': 'http://localhost:5678' },
         port: 9876,
+    },
+    node: {
+        dgram: 'empty',
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty',
+        child_process: 'empty',
     },
     plugins: [
         new CleanWebpackPlugin(
