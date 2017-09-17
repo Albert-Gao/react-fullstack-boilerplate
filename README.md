@@ -8,13 +8,14 @@ This project uses:
 - Feathers (As backend)
 - React
 - Redux
-- redux-saga
+- Redux-saga
+- Jest
 - Webpack
     - JS/JSX
     - SCSS
     - Images
-- Jest
 
+Babel-loader configures with `env`, `react`, `object spread` and `generator`.
 
 ## Getting Started
 
