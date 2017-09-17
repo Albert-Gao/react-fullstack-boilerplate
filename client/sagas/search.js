@@ -17,7 +17,7 @@ function getData(results) {
                         id: item.id,
                         name: item.name,
                         description: item.description,
-                        url: item.url,
+                        url: item.html_url,
                         stars: item.stargazers_count,
                         language: item.language
                     });

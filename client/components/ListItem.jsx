@@ -2,29 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ListItem = ({ name, description, url, stars, language }) => (
-    <li>Try
-        <table>
-            <tbody>
-                <tr>
-                    <td>
-                        <a href={url}>Name:</a>
-                    </td>
-                    <td>{name}</td>
-                </tr>
-                <tr>
-                    <td>Description:</td>
-                    <td>{description}</td>
-                </tr>
-                <tr>
-                    <td>Stars:</td>
-                    <td>{stars}</td>
-                </tr>
-                <tr>
-                    <td>Language:</td>
-                    <td>{language}</td>
-                </tr>
-            </tbody>
-        </table>
+    <li><a href={url} target="_blank">{name}</a>
+        <ul>
+            <li>Description: {description}</li>
+            <li>Language: {language}</li>
+            <li>Stars: {stars}</li>
+        </ul>
+        <br />
     </li>
 );
 

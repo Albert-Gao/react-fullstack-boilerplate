@@ -3,12 +3,21 @@ import PropTypes from 'prop-types';
 import ListItem from './ListItem';
 
 const SearchList = ({ status, results }) => {
+    let message = '';
+    if (results.length === 0) {
+        message = 'No search yet';
+    }
+    if (status.isFetching) {
+        message = 'Loading...';
+    }
     return (
-        <ul>
-            {results.map(todo =>
-                <ListItem key={todo.id} {...todo} />
-            )}
-        </ul>
+        message
+            ? <p>{message}</p>
+            : <ol>
+                {results.map(todo =>
+                    <ListItem key={todo.id} {...todo} />
+                )}
+            </ol>
     );
 };
 
