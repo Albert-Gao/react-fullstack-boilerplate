@@ -42,13 +42,17 @@ module.exports = {
                 options: {
                     cacheDirectory: true,
                     presets: [['env', { modules: false }], 'react'],
-                    plugins: ['react-hot-loader/babel', "transform-object-rest-spread"],
+                    plugins: [
+                        'transform-object-rest-spread',
+                        'transform-runtime',
+                        'react-hot-loader/babel'],
                     ignore: [
                         'tests/',
                         'build/',
+                        'config/',
                         'node_modules/',
                         'server/',
-                        'public',
+                        'public/',
                     ],
                 },
             },
@@ -65,7 +69,7 @@ module.exports = {
                         options: {
                             ident: 'postcss',
                             plugins: () => [
-                                require('postcss-flexbugs-fixes'),
+                                'postcss-flexbugs-fixes',
                                 autoPrefixer({
                                     browsers: [
                                         '>1%',
@@ -111,9 +115,9 @@ module.exports = {
             }
         ),
         new HtmlWebpackPlugin({ template: paths.appHtml }),
-        new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
         new WriteFilePlugin(),
         new CopyWebpackPlugin(),
+        new webpack.HotModuleReplacementPlugin()
     ],
 };
