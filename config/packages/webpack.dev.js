@@ -87,7 +87,7 @@ module.exports = {
             },
         ],
     },
-    devtool: 'cheap-eval-source-map',
+    devtool: 'eval-source-map',
     devServer: {
         hot: true,
         contentBase: paths.appBuild,
