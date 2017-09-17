@@ -2,13 +2,15 @@ const rp = require('request-promise');
 const app = require('../server/app');
 
 describe('Feathers application tests', () => {
+    let server;
+
     beforeEach((done) => {
-        this.server = app.listen(3030);
-        this.server.once('listening', () => done());
+        server = app.listen(3030);
+        server.once('listening', () => done());
     });
 
     afterEach((done) => {
-        this.server.close(done);
+        server.close(done);
     });
 
     test('starts and shows the index page', async () => {

@@ -5,7 +5,7 @@ import ListItem from './ListItem';
 const SearchList = ({ status, results }) => {
     let message = '';
     if (results.length === 0) {
-        message = 'No search yet';
+        message = 'No search yet!!!';
     }
     if (status.isFetching) {
         message = 'Loading...';
