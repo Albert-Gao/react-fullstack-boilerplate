@@ -69,7 +69,7 @@ module.exports = {
                         options: {
                             ident: 'postcss',
                             plugins: () => [
-                                'postcss-flexbugs-fixes',
+                                require('postcss-flexbugs-fixes'),
                                 autoPrefixer({
                                     browsers: [
                                         '>1%',
