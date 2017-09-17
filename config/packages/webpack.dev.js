@@ -12,7 +12,7 @@ module.exports = {
         'react-hot-loader/patch',
         'webpack-dev-server/client?http://localhost:9876',
         'webpack/hot/only-dev-server',
-        './client/index.jsx',
+        paths.appIndexJs,
     ],
     output: {
         filename: 'static/js/bundle.js',
@@ -95,6 +95,7 @@ module.exports = {
     devServer: {
         hot: true,
         contentBase: paths.appBuild,
+        historyApiFallback: true,
         publicPath: '/',
         overlay: {
             warnings: true,
@@ -119,9 +120,9 @@ module.exports = {
             }
         ),
         new HtmlWebpackPlugin({ template: paths.appHtml }),
+        new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
         new WriteFilePlugin(),
         new CopyWebpackPlugin(),
-        new webpack.HotModuleReplacementPlugin()
     ],
 };

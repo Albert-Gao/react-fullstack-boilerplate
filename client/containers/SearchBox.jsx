@@ -19,7 +19,7 @@ let SearchBox = ({ dispatch }) => {
             >
                 <input ref={(node) => { input = node; }} />
                 <button type="submit">
-                    Search Repo!
+                    Search Repo
                 </button>
             </form>
         </div>);
