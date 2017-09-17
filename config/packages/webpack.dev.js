@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const paths = require('./paths');
+const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -19,7 +20,10 @@ module.exports = {
         chunkFilename: 'static/js/[name].chunk.js',
         pathinfo: true,
         path: paths.appBuild,
-        publicPath: './',
+        publicPath: '/',
+        devtoolModuleFilenameTemplate: info =>
+            path.resolve(info.absoluteResourcePath).replace(/\\/g, '/'),
+
     },
     resolve: {
         extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx'],
