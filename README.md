@@ -1,6 +1,6 @@
 # Fullstack-react-boilerplate
 
-> All latest tech stack in one go. And all comes with sample code for you to start with. The sample is written for a simple ajax app rather than a TODO list.
+> All latest tech stack in one go. And all comes with sample code for you to start with. The sample is written for a simple ajax app rather than a TODO list. I will continue learning best practices from other good boilerplate, currently learned a lot from `create-react-app`.
 
 ## Folder structure
 - client: Your front-end code
@@ -22,7 +22,7 @@ This project uses:
 - Jest
 - Webpack
     - JS/JSX
-    - SCSS
+    - SCSS -> PostCSS prefix and flexbox prefix
     - Images
 
 Feathers is an awesome node.js framework which is currently a thin wrapper around Express.js with support for `CORS`, `Helmet`, `GZip` etc and making develop rest api in a very easy manner via service and hooks. It scales well and supports for splitting your API endpoint into micro service in the future.
@@ -55,6 +55,7 @@ __0.1.0__
 - The client side example should work with feathers back end rather than Github API.
 - Nightwatch for end to end testing
 - Docker for deployment
+- PWA support
 
 ## License
 
