@@ -25,6 +25,13 @@ Getting up and running is as easy as 1, 2, 3.
 2. Start the server: `npm run start`
 3. Start the webpack-dev-server `npm run dev`
 
+## Command:
+`npm run server`: Start the server
+`npm run dev`: Development with Hot module reloading via Webpack-dev-server
+`npm run dev:build`: Build project for development usage for things like debug in Webpack
+`npm run build`: Build project for production.
+`npm run test`: Test via Jest
+
 ## Testing
 - To be added, with Nightwatch
 

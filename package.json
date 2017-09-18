@@ -23,7 +23,6 @@
     },
     "scripts": {
         "test": "NODE_ENV=test ./node_modules/.bin/jest --config=config/packages/jest.config.json",
-        "eslint": "eslint server/. test/. --config .eslintrc.json",
         "start": "node server/",
         "e2e": "./node_modules/.bin/nightwatch --config=configs/nightwatch.json",
         "dev:build": "NODE_ENV=development ./node_modules/.bin/webpack --color --progress --config=./config/packages/webpack.dev.js --display-error-details",
