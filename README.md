@@ -2,6 +2,16 @@
 
 > All latest tech stack in one go. And all comes with sample code for you to start with. The sample is written for a simple ajax app rather than a TODO list.
 
+## Folder structure
+- client: Your front-end code
+- server: Your back-end code
+- config: Server settings
+    - packages: NPM packages settings
+- public: Some front-end related static assets for building
+- tests: Your test cases
+- build: Output folder for building (Will be auto cleaned before each build)
+
+
 ## Main dependencies:
 
 This project uses:
