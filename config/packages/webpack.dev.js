@@ -41,7 +41,7 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 include: paths.appSrc,
-                exclude: /(node_modules|bower_components)/,
+                exclude: /node_modules/,
                 loader: 'babel-loader',
                 options: {
                     cacheDirectory: true,
@@ -104,13 +104,6 @@ module.exports = {
         proxy: { '/': 'http://localhost:5678' },
         port: 9876,
     },
-    node: {
-        dgram: 'empty',
-        fs: 'empty',
-        net: 'empty',
-        tls: 'empty',
-        child_process: 'empty',
-    },
     plugins: [
         new CleanWebpackPlugin(
             ['build'],
@@ -125,4 +118,11 @@ module.exports = {
         new WriteFilePlugin(),
         new CopyWebpackPlugin(),
     ],
+    node: {
+        dgram: 'empty',
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty',
+        child_process: 'empty',
+    },
 };
