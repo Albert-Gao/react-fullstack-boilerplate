@@ -12,7 +12,7 @@ module.exports = {
         'react-hot-loader/patch',
         'webpack-dev-server/client?http://localhost:9876',
         'webpack/hot/only-dev-server',
-        paths.appIndexJs,
+        paths.appIndexJs
     ],
     output: {
         filename: 'static/js/bundle.js',
@@ -22,11 +22,11 @@ module.exports = {
         path: paths.appBuild,
         publicPath: '/',
         devtoolModuleFilenameTemplate: info =>
-            path.resolve(info.absoluteResourcePath).replace(/\\/g, '/'),
+            path.resolve(info.absoluteResourcePath).replace(/\\/g, '/')
 
     },
     resolve: {
-        extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx'],
+        extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx']
     },
     module: {
         rules: [
@@ -35,8 +35,8 @@ module.exports = {
                 loader: require.resolve('url-loader'),
                 options: {
                     limit: 10000,
-                    name: 'static/media/[name].[hash:8].[ext]',
-                },
+                    name: 'static/media/[name].[hash:8].[ext]'
+                }
             },
             {
                 test: /\.(js|jsx)$/,
@@ -56,9 +56,9 @@ module.exports = {
                         'config/',
                         'node_modules/',
                         'server/',
-                        'public/',
-                    ],
-                },
+                        'public/'
+                    ]
+                }
             },
             {
                 test: /\.scss$/,
@@ -66,7 +66,7 @@ module.exports = {
                     require.resolve('style-loader'),
                     {
                         loader: require.resolve('css-loader'),
-                        options: { importLoaders: 2 },
+                        options: { importLoaders: 2 }
                     },
                     {
                         loader: require.resolve('postcss-loader'),
@@ -79,17 +79,17 @@ module.exports = {
                                         '>1%',
                                         'last 4 versions',
                                         'Firefox ESR',
-                                        'not ie < 9', // React doesn't support IE8 anyway
+                                        'not ie < 9' // React doesn't support IE8 anyway
                                     ],
-                                    flexbox: 'no-2009',
-                                }),
-                            ],
-                        },
+                                    flexbox: 'no-2009'
+                                })
+                            ]
+                        }
                     },
-                    require.resolve('sass-loader'),
-                ],
-            },
-        ],
+                    require.resolve('sass-loader')
+                ]
+            }
+        ]
     },
     devtool: 'eval-source-map',
     devServer: {
@@ -99,10 +99,10 @@ module.exports = {
         publicPath: '/',
         overlay: {
             warnings: true,
-            errors: true,
+            errors: true
         },
         proxy: { '/': 'http://localhost:5678' },
-        port: 9876,
+        port: 9876
     },
     plugins: [
         new CleanWebpackPlugin(
@@ -116,13 +116,13 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
         new WriteFilePlugin(),
-        new CopyWebpackPlugin(),
+        new CopyWebpackPlugin()
     ],
     node: {
         dgram: 'empty',
         fs: 'empty',
         net: 'empty',
         tls: 'empty',
-        child_process: 'empty',
-    },
+        child_process: 'empty'
+    }
 };

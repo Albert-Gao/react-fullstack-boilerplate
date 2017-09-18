@@ -46,7 +46,7 @@ module.exports = {
         chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
         publicPath: publicPath,
         devtoolModuleFilenameTemplate: info =>
-            path.relative(paths.appSrc, info.absoluteResourcePath).replace(/\\/g, '/'),
+            path.relative(paths.appSrc, info.absoluteResourcePath).replace(/\\/g, '/')
     },
     resolve: {
         extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx']
@@ -64,20 +64,20 @@ module.exports = {
                     /\.bmp$/,
                     /\.gif$/,
                     /\.jpe?g$/,
-                    /\.png$/,
+                    /\.png$/
                 ],
                 loader: require.resolve('file-loader'),
                 options: {
-                    name: 'static/media/[name].[hash:8].[ext]',
-                },
+                    name: 'static/media/[name].[hash:8].[ext]'
+                }
             },
             {
                 test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
                 loader: require.resolve('url-loader'),
                 options: {
                     limit: 10000,
-                    name: 'static/media/[name].[hash:8].[ext]',
-                },
+                    name: 'static/media/[name].[hash:8].[ext]'
+                }
             },
             {
                 test: /\.(js|jsx)$/,
@@ -90,17 +90,17 @@ module.exports = {
                     presets: [['env', { modules: false }], 'react'],
                     plugins: [
                         'transform-object-rest-spread',
-                        'transform-runtime',
-                        'react-hot-loader/babel'],
+                        'transform-runtime'
+                    ],
                     ignore: [
                         'tests/',
                         'build/',
                         'config/',
                         'node_modules/',
                         'server/',
-                        'public/',
-                    ],
-                },
+                        'public/'
+                    ]
+                }
             },
             {
                 test: /\.scss$/,
@@ -114,8 +114,8 @@ module.exports = {
                                     options: {
                                         importLoaders: 2,
                                         minimize: true,
-                                        sourceMap: true,
-                                    },
+                                        sourceMap: true
+                                    }
                                 },
                                 {
                                     loader: require.resolve('postcss-loader'),
@@ -128,12 +128,12 @@ module.exports = {
                                                     '>1%',
                                                     'last 4 versions',
                                                     'Firefox ESR',
-                                                    'not ie < 9', // React doesn't support IE8 anyway
+                                                    'not ie < 9' // React doesn't support IE8 anyway
                                                 ],
-                                                flexbox: 'no-2009',
-                                            }),
-                                        ],
-                                    },
+                                                flexbox: 'no-2009'
+                                            })
+                                        ]
+                                    }
                                 },
                                 require.resolve('sass-loader')
                             ]
@@ -153,7 +153,7 @@ module.exports = {
             }
         ),
         new ExtractTextPlugin({
-            filename: cssFilename,
+            filename: cssFilename
         }),
         new HtmlWebpackPlugin({
             inject: true,
@@ -168,8 +168,8 @@ module.exports = {
                 keepClosingSlash: true,
                 minifyJS: true,
                 minifyCSS: true,
-                minifyURLs: true,
-            },
+                minifyURLs: true
+            }
         }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
@@ -177,19 +177,19 @@ module.exports = {
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false,
-                comparisons: false,
+                comparisons: false
             },
             output: {
                 comments: false,
-                ascii_only: true,
+                ascii_only: true
             },
-            sourceMap: true,
+            sourceMap: true
         })
     ],
     node: {
         dgram: 'empty',
         fs: 'empty',
         net: 'empty',
-        tls: 'empty',
+        tls: 'empty'
     }
 };
