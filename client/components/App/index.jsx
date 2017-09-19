@@ -1,9 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import NavBar from '../NavBar';
-import AboutPage from '../AboutPage';
 import HomePage from '../HomePage';
-import NoMatchPage from '../NoMatchPage';
 import './App.scss';
 
 const App = () => {
@@ -19,9 +17,11 @@ const App = () => {
                 <Route
                     exact
                     path="/about"
-                    component={AboutPage}
+                    render={() => <div>About Page</div>}
                 />
-                <Route component={NoMatchPage} />
+                <Route render={({ location }) =>
+                    <h3>No match for <code>{location.pathname}</code></h3>}
+                />
             </Switch>
         </div>
     );
