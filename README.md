@@ -1,6 +1,6 @@
 # Fullstack-react-boilerplate
 
-> All latest tech stack in one go. And all comes with sample code for you to start with. The sample is written for a simple ajax app rather than a TODO list. I will continue learning best practices from other good boilerplate, currently learned a lot from `create-react-app`.
+> All latest tech stack in one go. And all come with sample code for you to start with. The sample is written for a simple ajax app rather than a TODO list. I will continue learning best practices from other good boilerplate, currently learned a lot from `create-react-app`.
 
 ## Folder structure
 - client: Your front-end code
@@ -17,6 +17,7 @@
 This project uses:
 - Feathers (As backend)
 - React
+- React-router
 - Redux
 - Redux-saga
 - Jest
