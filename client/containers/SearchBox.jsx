@@ -19,11 +19,12 @@ let SearchBox = ({ dispatch }) => {
             >
                 <input ref={(node) => { input = node; }} />
                 <button type="submit">
-                    Search Repo
+                    Search Repo!
                 </button>
             </form>
         </div>);
 };
+
 SearchBox = connect()(SearchBox);
 
 export default SearchBox;
