@@ -2,7 +2,7 @@
 
 > All latest tech stack in one go. And all come with sample code for you to start with. The sample is written for a simple ajax app rather than a TODO list. I will continue learning best practices from other good boilerplate, currently learned a lot from `create-react-app`.
 
-## Folder structure
+## 1. Folder structure
 - client: Your front-end code
 - server: Your back-end code
 - config: Server settings
@@ -12,7 +12,7 @@
 - build: Output folder for building (Will be auto cleaned before each build)
 
 
-## Main dependencies:
+## 2. Main dependencies:
 ### Backend
 - [Feathers](https://feathersjs.com/)
 
@@ -34,6 +34,7 @@
 - webpack-dev-server
 - react-hot-loader
 - redux-devtools (Just install this [Chrome plugin](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en))
+- [react-storybook](https://storybook.js.org/) (Isolated component development environment)
 
 ### Building
 - Webpack
@@ -47,29 +48,24 @@ Feathers is an awesome node.js framework which is currently a thin wrapper aroun
 
 Babel-loader configures with `env`, `react`, `object spread` and `generator`.
 
-## Getting Started
-
-Getting up and running is as easy as 1, 2, 3.
-
+## 3. Getting Started
 1. Install the dependencies: `npm install`
 2. Start the server: `npm run start`
 3. Start the webpack-dev-server `npm run dev`
 
-## Command:
+## 4. Command:
 - `npm run server`: Start the server
 - `npm run dev`: Development with Hot module reloading via Webpack-dev-server
 - `npm run dev:build`: Build project for development usage for things like debug in Webpack
 - `npm run build`: Build project for production.
 - `npm run test`: Test via Jest
+- `npm run storybook`: Open Storybook
 
-## Testing
-- To be added, with Nightwatch
-
-## Changelog
+## 5. Changelog
 __0.1.0__
 - Initial release
 
-## TODO
+## 6. TODO
 - The client side example should work with feathers back end rather than Github API.
 - Nightwatch for end to end testing
 - Docker for deployment
