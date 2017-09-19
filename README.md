@@ -13,18 +13,35 @@
 
 
 ## Main dependencies:
+### Backend
+- [Feathers](https://feathersjs.com/)
 
-This project uses:
-- Feathers (As backend)
+### Main front end libs
 - React
 - React-router
+- React-redux (Connect container component to redux store)
 - Redux
 - Redux-saga
+
+### Tests
 - Jest
+- Enzyme (to be added)
+
+### Browser Automation
+- Nightwatch (to be added)
+
+### Development
+- webpack-dev-server
+- react-hot-loader
+- redux-devtools (Just install this [Chrome plugin](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en))
+
+### Building
 - Webpack
     - JS/JSX
-    - SCSS -> PostCSS prefix and flexbox prefix
+    - SCSS -> PostCSS auto-prefix and flexbox prefix
     - Images
+    - Any assets
+
 
 Feathers is an awesome node.js framework which is currently a thin wrapper around Express.js with support for `CORS`, `Helmet`, `GZip` etc and making develop rest api in a very easy manner via service and hooks. It scales well and supports for splitting your API endpoint into micro service in the future.
 
