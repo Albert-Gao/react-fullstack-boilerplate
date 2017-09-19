@@ -2,6 +2,7 @@
 
 > All latest tech stack in one go. And all come with sample code for you to start with. The sample is written for a simple ajax app rather than a TODO list. I will continue learning best practices from other good boilerplate, currently learned a lot from `create-react-app`.
 
+
 ## 1. Folder structure
 - client: Your front-end code
 - server: Your back-end code
@@ -12,7 +13,22 @@
 - build: Output folder for building (Will be auto cleaned before each build)
 
 
-## 2. Main dependencies:
+## 2. Getting Started
+1. Install the dependencies: `npm install`
+2. Start the server: `npm run start`
+3. Start the webpack-dev-server `npm run dev`
+
+
+## 3. Command:
+- `npm run server`: Start the server
+- `npm run dev`: Development with Hot module reloading via Webpack-dev-server
+- `npm run dev:build`: Build project for development usage for things like debug in Webpack
+- `npm run build`: Build project for production.
+- `npm run test`: Test via Jest
+- `npm run storybook`: Open Storybook
+
+
+## 4. Main dependencies:
 ### Backend
 - [Feathers](https://feathersjs.com/)
 
@@ -48,22 +64,11 @@ Feathers is an awesome node.js framework which is currently a thin wrapper aroun
 
 Babel-loader configures with `env`, `react`, `object spread` and `generator`.
 
-## 3. Getting Started
-1. Install the dependencies: `npm install`
-2. Start the server: `npm run start`
-3. Start the webpack-dev-server `npm run dev`
-
-## 4. Command:
-- `npm run server`: Start the server
-- `npm run dev`: Development with Hot module reloading via Webpack-dev-server
-- `npm run dev:build`: Build project for development usage for things like debug in Webpack
-- `npm run build`: Build project for production.
-- `npm run test`: Test via Jest
-- `npm run storybook`: Open Storybook
 
 ## 5. Changelog
 __0.1.0__
 - Initial release
+
 
 ## 6. TODO
 - The client side example should work with feathers back end rather than Github API.
