@@ -10,6 +10,7 @@
     - packages: NPM packages settings
 - public: Some front-end related static assets for building
 - tests: Your test cases
+- stories: Stories for your component (react storybook)
 - build: Output folder for building (Will be auto cleaned before each build)
 
 
@@ -76,8 +77,7 @@ __0.1.0__
 - Docker for deployment
 - PWA support
 
+
 ## License
-
 Copyright (c) 2017
-
 Licensed under the [MIT license](LICENSE).
