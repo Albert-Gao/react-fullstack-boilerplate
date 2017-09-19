@@ -1,4 +1,4 @@
-import status from './status';
+import status from '../../../client/reducers/status';
 
 describe('status reducer', () => {
     it('should handle initial state', () => {

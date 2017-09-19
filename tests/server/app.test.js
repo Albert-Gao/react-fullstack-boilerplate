@@ -1,5 +1,5 @@
 const rp = require('request-promise');
-const app = require('../server/app');
+const app = require('../../server/app');
 
 describe('Feathers application tests', () => {
     let server;

@@ -1,4 +1,4 @@
-import * as actions from './index';
+import * as actions from '../../../client/actions/index';
 
 describe('actions', () => {
     it('searchRepo should create SEARCH_REQUESTED action', () => {
