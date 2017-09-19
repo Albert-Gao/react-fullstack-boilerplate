@@ -5,6 +5,8 @@ const mapStateToProps = ({ status, results }) => (
     { status, results }
 );
 
-const SearchListContainer = connect(mapStateToProps)(SearchList);
+const SearchListContainer = connect(
+    mapStateToProps
+)(SearchList);
 
 export default SearchListContainer;
