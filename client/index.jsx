@@ -23,10 +23,8 @@ function renderWrapper(Component) {
 
 renderWrapper(App);
 
-if (process.env.NODE_ENV === 'development') {
-    if (module.hot) {
-        module.hot.accept('./components/App', () => {
-            renderWrapper(App);
-        });
-    }
+if (module.hot) {
+    module.hot.accept('./components/App', () => {
+        renderWrapper(App);
+    });
 }
