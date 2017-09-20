@@ -2,7 +2,7 @@ import React from 'react';
 import SearchBox from '../containers/SearchBox';
 import SearchListContainer from '../containers/SearchListContainer';
 
-const HomePage = () => (
+const HomePage = ({match, location, history}) => (
     <div>
         <SearchBox />
         <SearchListContainer />

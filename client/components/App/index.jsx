@@ -16,7 +16,14 @@ const App = () => (
             <Route
                 exact
                 path="/about"
-                render={() => <div>About Page</div>}
+                render={({ location, history }) => (
+                    <div>
+                        <p>We are at: {location.pathname}</p>
+                        <button onClick={() => history.push('/')}>
+                            Go searching
+                        </button>
+                    </div>
+                )}
             />
             <Route render={({ location }) =>
                 <h3>No match for <code>{location.pathname}</code></h3>}

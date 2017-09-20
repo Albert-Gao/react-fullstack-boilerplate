@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NavBar = () => {
+const NavBar = (props) => {
     const activeStyle = {
         fontWeight: 'bold',
         color: 'red'
