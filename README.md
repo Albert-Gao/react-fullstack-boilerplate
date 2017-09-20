@@ -39,6 +39,7 @@
 - React-redux (Connect container component to redux store)
 - Redux
 - Redux-saga
+- Reselect (An efficient selector library which works well with Redux)
 
 ### Tests
 - Jest

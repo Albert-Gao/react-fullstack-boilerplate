@@ -6,6 +6,9 @@ export const actionTypes = {
     SEARCH_SUCCEEDED: 'SEARCH_SUCCEEDED',
     SEARCH_FAILED: 'SEARCH_FAILED',
 
+    SHOW_ENGLISH: 'SHOW_ENGLISH',
+    SHOW_ALL: 'SHOW_ALL',
+
     CLEAR_LIST: 'CLEAR_LIST'
 };
 
@@ -14,6 +17,10 @@ export const searchRepo = keyword => ({
     payload: { keyword }
 });
 
-export const clearList = () => ({
-    type: actionTypes.CLEAR_LIST
+export const showEnglishItems = () => ({
+    type: actionTypes.SHOW_ENGLISH
+});
+
+export const showAllItems = () => ({
+    type: actionTypes.SHOW_ALL
 });
