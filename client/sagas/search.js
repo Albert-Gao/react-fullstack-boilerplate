@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { takeEvery, call, put } from 'redux-saga/effects';
+import { takeLatest, call, put } from 'redux-saga/effects';
 import { actionTypes } from '../actions';
 
 function getData(results) {
@@ -46,19 +46,10 @@ function* worker(action) {
 }
 
 function* watchRequest() {
-    yield takeEvery(
+    yield takeLatest(
         actionTypes.SEARCH_REQUESTED,
         worker
     );
 }
 
 export default watchRequest;
-
-// const data = {
-//     id: 23316133,
-//     name: 'ASDayPicker',
-//     description: 'iOS day picker that resembles Calendar.app\'s week view',
-//     url: 'https://api.github.com/repos/appscape/ASDayPicker',
-//     stargazers_count: 126,
-//     language: 'Objective-C's
-// };

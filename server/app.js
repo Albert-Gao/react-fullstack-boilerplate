@@ -48,7 +48,7 @@ app.configure(services);
 app.get('*', (req, res) => {
     // TODO: Add env check for different build folder for prod and dev
     const folder = path.join(__dirname, '../build');
-    const file = path.join(folder + '/index.html');
+    const file = path.join(`${folder}/index.html`);
     res.sendFile(file);
 });
 
