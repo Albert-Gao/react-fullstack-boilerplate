@@ -10,6 +10,9 @@ const SearchList = ({ status, results }) => {
     if (status.isFetching) {
         message = 'Loading...';
     }
+    if (typeof results === 'string'){
+        message = results;
+    }
     return (
         message
             ? <p>{message}</p>
