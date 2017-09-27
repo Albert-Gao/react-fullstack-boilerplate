@@ -1,6 +1,8 @@
 # Fullstack-react-boilerplate
 
-> All latest tech stack in one go. And all come with sample code for you to start with. The sample is written for a simple ajax app rather than a TODO list. I will continue learning best practices from other good boilerplate, currently learned a lot from `create-react-app`.
+> Yet another boilerplate, the reason I did this is I found some other famous boilerplates contain so many codes which only for constructing the structure. I love an approach which most of the code should be related to the logic. And when you build your component, you can simply copy the file for a good start.
+
+All latest tech stack in one go. And all come with sample code for you to start with. The sample is written for a simple ajax app rather than a TODO list. I will continue learning best practices from other good boilerplate, currently learned a lot from `create-react-app`.
 
 
 ## 1. Folder structure
