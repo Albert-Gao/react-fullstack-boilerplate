@@ -47,6 +47,7 @@ module.exports = {
                     cacheDirectory: true,
                     presets: [['env', { modules: false }], 'react'],
                     plugins: [
+                        'transform-react-jsx-source',
                         'transform-object-rest-spread',
                         'transform-runtime',
                         'react-hot-loader/babel'],

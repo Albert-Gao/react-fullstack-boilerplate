@@ -55,6 +55,7 @@ All latest tech stack in one go. And all come with sample code for you to start 
 - react-hot-loader
 - redux-devtools (Just install this [Chrome plugin](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en))
 - [react-storybook](https://storybook.js.org/) (Isolated component development environment)
+- Spit out the line number of components when you use React devtools in development (Disabled in production)
 
 ### Building
 - Webpack
