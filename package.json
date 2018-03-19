@@ -43,7 +43,7 @@
     "compression": "^1.7.2",
     "cors": "^2.8.4",
     "feathers-hooks-common": "^4.8.0",
-    "helmet": "^3.9.0",
+    "helmet": "^3.12.0",
     "history": "^4.7.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
